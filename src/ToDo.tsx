@@ -3,7 +3,7 @@ import { ToDoData } from "./datatypes/ToDoData";
 import "./ToDo.scss";
 
 interface ToDoProps {
-  todoData: ToDoData
+  todoData: ToDoData;
 }
 
 export default class ToDo extends Component<ToDoProps> {
@@ -12,7 +12,7 @@ export default class ToDo extends Component<ToDoProps> {
     const todoData = this.props.todoData;
 
     return(
-      <tr className="todo">
+      <tr className="text-primary">
         <td>{todoData.uid}    </td>
         <td>{todoData.name}   </td>
         <td>{todoData.duedate}</td>

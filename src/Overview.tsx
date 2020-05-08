@@ -21,7 +21,7 @@ export default class Overview extends Component<OverviewProps, OverviewState> {
 
   render(){
     return(
-      <div className="overview">
+      <div className="text-secondary">
         
         <h1>Your todo's</h1>
 
