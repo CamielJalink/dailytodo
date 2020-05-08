@@ -16,6 +16,7 @@ export default class Overview extends Component<OverviewProps, OverviewState> {
   constructor(props: OverviewProps){
     super(props);
     this.state = { todoData: dummyData };
+    console.log(this.state.todoData);
   }
 
   render(){
@@ -26,13 +27,17 @@ export default class Overview extends Component<OverviewProps, OverviewState> {
 
         <table>
           <thead>
-            <th></th>
-            <th>Title</th>
-            <th>Due date</th>
-            <th>Actions</th>
+            <tr>
+              <th>#</th>
+              <th>Title</th>
+              <th>Due date</th>
+              <th>Type</th>
+            </tr>
           </thead>
           <tbody>
-            <ToDo />
+            {this.state.todoData.map((todo) => {
+              return <ToDo key={todo.uid} todoData={todo} />
+            })}
           </tbody>
         </table>
       </div>

@@ -1,13 +1,23 @@
 import React, { Component } from "react";
-import "./ToDo.scss"
+import { ToDoData } from "./datatypes/ToDoData";
+import "./ToDo.scss";
 
-export default class ToDo extends Component {
+interface ToDoProps {
+  todoData: ToDoData
+}
+
+export default class ToDo extends Component<ToDoProps> {
 
   render(){
+    const todoData = this.props.todoData;
+
     return(
-      <div className="todo">
-        <h3>I am a todo</h3>
-      </div>
+      <tr className="todo">
+        <td>{todoData.uid}    </td>
+        <td>{todoData.name}   </td>
+        <td>{todoData.duedate}</td>
+        <td>{todoData.type}   </td>
+      </tr>
     )
   }
 }
