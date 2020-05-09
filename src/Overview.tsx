@@ -21,12 +21,11 @@ export default class Overview extends Component<OverviewProps, OverviewState> {
 
   render(){
     return(
-      <div className="text-secondary">
-        
-        <h1>Your todo's</h1>
+      <div className="w-50 m-auto">
+        <h1 className="mt-5">Daily todo's</h1>
 
-        <table>
-          <thead>
+        <table className="mt-4 table table-bordered table-striped table-hover">
+          <thead className="thead-light">
             <tr>
               <th>#</th>
               <th>Title</th>

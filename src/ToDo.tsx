@@ -12,7 +12,7 @@ export default class ToDo extends Component<ToDoProps> {
     const todoData = this.props.todoData;
 
     return(
-      <tr className="text-primary">
+      <tr>
         <td>{todoData.uid}    </td>
         <td>{todoData.name}   </td>
         <td>{todoData.duedate}</td>
