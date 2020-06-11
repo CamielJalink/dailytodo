@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './fonts/Caveat-Regular.ttf';
+import './fonts/Caveat-Bold.ttf';
 import './index.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';

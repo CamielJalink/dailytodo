@@ -22,7 +22,7 @@ export default class Overview extends Component<OverviewProps, OverviewState> {
   render(){
     return(
       <div className="w-50 m-auto">
-        <h1 className="mt-5">Daily todo's</h1>
+        <h1 className="mt-5 font-weight-bold">Daily todo's</h1>
 
         <table className="mt-4 table table-bordered table-striped table-hover">
           <thead className="thead-light">

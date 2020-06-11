@@ -1,2 +1,16 @@
+@font-face {
+  font-family: 'Caveat';
+  src: url(./fonts/Caveat-Regular.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
+@font-face {
+  font-family: 'Caveat';
+  src: url(./fonts/Caveat-Bold.ttf) format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+$font-family-base: 'Caveat';
 @import "bootstrap";
