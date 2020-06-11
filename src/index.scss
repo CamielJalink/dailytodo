@@ -12,5 +12,7 @@
   font-style: normal;
 }
 
-$font-family-base: 'Caveat';
+
+@import "./variables";
 @import "bootstrap";
+@import "./globalStyles.scss";
