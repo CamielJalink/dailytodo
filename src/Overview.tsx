@@ -31,6 +31,7 @@ export default class Overview extends Component<OverviewProps, OverviewState> {
               <th>Title</th>
               <th>Due date</th>
               <th>Type</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
