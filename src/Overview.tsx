@@ -24,8 +24,8 @@ export default class Overview extends Component<OverviewProps, OverviewState> {
       <div className="w-50 m-auto">
         <h1 className="mt-5 font-weight-bold">Daily todo's</h1>
 
-        <table className="mt-4 table table-bordered table-striped table-hover">
-          <thead className="thead-light">
+        <table className="mt-5 table table-borderless table-striped table-hover">
+          <thead className="thead-light border-bottom border-secondary">
             <tr>
               <th>#</th>
               <th>Title</th>
