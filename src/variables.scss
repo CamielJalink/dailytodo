@@ -6,20 +6,21 @@ $font-size-base: 1.25rem;
 $dark-green: #1D5A49;
 $light-green: #699261;
 $light-green-bg: #C9E3D5;
-$orange: #E9A324;
+$orange: #D5B264;
 
 
 // Bootstrap color variables
 $primary: $dark-green;
 $secondary: $light-green;
 $light: $light-green-bg;
+$info: $orange;
 
 
 // Specific Bootstrap color overrides
 $body-color: $primary;
-$body-color: $secondary;
 $border-width: 2px;
 
+$table-color: $secondary;
 $table-head-color: $primary;
 $table-head-bg: $light;
 $table-hover-bg: $light;
