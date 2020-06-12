@@ -22,7 +22,7 @@ export default class Overview extends Component<OverviewProps, OverviewState> {
 
   render(){
     return(
-      <div className="w-50 m-auto">
+      <div className="col-12 col-lg-6 offset-lg-3 px-4">
 
         <div className="mt-5 d-flex justify-content-between">
           <h1 className="font-weight-bold">Daily todo's</h1>
@@ -33,12 +33,12 @@ export default class Overview extends Component<OverviewProps, OverviewState> {
 
         <table className="mt-5 table table-borderless table-striped table-hover">
           <thead className="thead-light border-bottom border-secondary">
-            <tr>
-              <th>#</th>
-              <th>Title</th>
-              <th>Due date</th>
-              <th>Type</th>
-              <th>Actions</th>
+            <tr className="d-flex">
+              <th className="col-1">#</th>
+              <th className="col-5">Title</th>
+              <th className="col-2">Due date</th>
+              <th className="col-2">Type</th>
+              <th className="col-2">Actions</th>
             </tr>
           </thead>
           <tbody>

@@ -3,7 +3,7 @@ import Overview from "./Overview";
 
 function App() {
   return (
-    <div>
+    <div className="row">
       <Overview />
     </div>
   );

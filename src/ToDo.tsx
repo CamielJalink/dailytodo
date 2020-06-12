@@ -13,19 +13,19 @@ export default class ToDo extends Component<ToDoProps> {
     const todoData = this.props.todoData;
 
     return(
-      <tr>
-        <td>{todoData.uid}    </td>
-        <td>{todoData.name}   </td>
-        <td>{todoData.duedate}</td>
-        <td>{todoData.type}   </td>
-        <td className="d-flex justify-content-around">
-          <button className="m-0 p-0 btn btn-link">
+      <tr className="d-flex">
+        <td className="col-1">{todoData.uid}    </td>
+        <td className="col-5">{todoData.name}   </td>
+        <td className="col-2">{todoData.duedate}</td>
+        <td className="col-2">{todoData.type}   </td>
+        <td className="col-2 d-flex justify-content-between p-0">
+          <button className="m-0 px-2 py-0 btn btn-link">
             <CheckCircle />
           </button>
-          <button className="m-0 p-0 btn btn-link">
+          <button className="m-0 px-2 py-0 btn btn-link">
             <Clock />
           </button>
-          <button className="m-0 p-0 btn btn-link">
+          <button className="m-0 px-2 py-0 btn btn-link">
             <Info />
           </button>
         </td>
