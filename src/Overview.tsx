@@ -3,6 +3,7 @@ import "./Overview.scss";
 import ToDo from "./ToDo";
 import { ToDoData } from "./datatypes/ToDoData";
 import { dummyData } from "./datatypes/DummyData";
+import { PlusCircle } from "react-feather";
 
 
 interface OverviewProps{
@@ -22,7 +23,13 @@ export default class Overview extends Component<OverviewProps, OverviewState> {
   render(){
     return(
       <div className="w-50 m-auto">
-        <h1 className="mt-5 font-weight-bold">Daily todo's</h1>
+
+        <div className="mt-5 d-flex justify-content-between">
+          <h1 className="font-weight-bold">Daily todo's</h1>
+          <button className="btn btn-link text-info">
+            <PlusCircle size={55} strokeWidth={1.2} />
+          </button>
+        </div>
 
         <table className="mt-5 table table-borderless table-striped table-hover">
           <thead className="thead-light border-bottom border-secondary">
