@@ -15,11 +15,12 @@ export default class AddToDoModal extends Component{
               </button>
             </div>
             <div className="modal-body">
-              <p>Modal body text goes here.</p>
+              <h5>What needs to be done?</h5>
+              <p></p>
             </div>
             <div className="modal-footer">
-              <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" className="btn btn-primary">Add todo</button>
+              <button type="button" className="btn btn-danger" data-dismiss="modal">Close</button>
+              <button type="button" className="btn btn-primary">Add</button>
             </div>
           </div>
         </div>

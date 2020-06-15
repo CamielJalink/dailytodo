@@ -27,7 +27,7 @@ export default class Overview extends Component<OverviewProps, OverviewState> {
 
         <div className="mt-5 d-flex justify-content-between">
           <h1 className="font-weight-bold">Daily todo's</h1>
-          <button className="btn btn-link text-info" data-toggle="modal" data-target="#todoModal">
+          <button className="btn btn-link text-danger" data-toggle="modal" data-target="#todoModal">
             <PlusCircle size={55} strokeWidth={1.2} />
           </button>
         </div>
