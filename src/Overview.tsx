@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./Overview.scss";
 import ToDo from "./ToDo";
+import AddToDoModal from "./AddToDoModal";
 import { ToDoData } from "./datatypes/ToDoData";
 import { dummyData } from "./datatypes/DummyData";
 import { PlusCircle } from "react-feather";
@@ -14,10 +15,10 @@ interface OverviewState{
 }
 
 export default class Overview extends Component<OverviewProps, OverviewState> {
+
   constructor(props: OverviewProps){
     super(props);
     this.state = { todoData: dummyData };
-    console.log(this.state.todoData);
   }
 
   render(){
@@ -26,7 +27,7 @@ export default class Overview extends Component<OverviewProps, OverviewState> {
 
         <div className="mt-5 d-flex justify-content-between">
           <h1 className="font-weight-bold">Daily todo's</h1>
-          <button className="btn btn-link text-info">
+          <button className="btn btn-link text-info" data-toggle="modal" data-target="#todoModal">
             <PlusCircle size={55} strokeWidth={1.2} />
           </button>
         </div>
@@ -47,6 +48,8 @@ export default class Overview extends Component<OverviewProps, OverviewState> {
             })}
           </tbody>
         </table>
+        
+        <AddToDoModal/>
       </div>
     )
   }
