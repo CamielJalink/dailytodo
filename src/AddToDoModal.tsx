@@ -9,7 +9,8 @@ interface AddToDoState{
   description: string,
   dueDate: string,
   dueDateDeviation: number,
-  type: ToDoType,
+  // type: ToDoType,
+  type: boolean,
   recurringDays: number,
 };
 
@@ -17,7 +18,7 @@ export default class AddToDoModal extends Component<AddToDoProps, AddToDoState>{
 
   constructor(props: AddToDoProps){
     super(props);
-    this.state = { title: "", description: "", dueDate: "", dueDateDeviation: 0, type: ToDoType.single, recurringDays: 0 }
+    this.state = { title: "", description: "", dueDate: "", dueDateDeviation: 0, type: false, recurringDays: 0 }
     this.changeTitleHandler = this.changeTitleHandler.bind(this);
     this.changeDescriptionHandler = this.changeDescriptionHandler.bind(this);
     this.changeDueDateHandler = this.changeDueDateHandler.bind(this);
@@ -52,10 +53,8 @@ export default class AddToDoModal extends Component<AddToDoProps, AddToDoState>{
   }
 
   changeTypeHandler(evt: React.ChangeEvent<HTMLInputElement>) {
-    let realType: string = evt.target.value;
-    let fakeType: ToDoType = ToDoType.recurring;
     this.setState({
-      type: fakeType
+      type: evt.target.checked
     })
   }
 
@@ -69,7 +68,7 @@ export default class AddToDoModal extends Component<AddToDoProps, AddToDoState>{
     let todo: ToDoData = {
       name: this.state.title,
       description: this.state.description,
-      type: this.state.type,
+      type: this.state.type ? ToDoType.recurring : ToDoType.single,
       recurringDays: this.state.recurringDays,
       uid: uuid(),
       displayId: this.props.nextId,
@@ -78,7 +77,7 @@ export default class AddToDoModal extends Component<AddToDoProps, AddToDoState>{
     }
     this.props.addToDo(todo);
     this.setState({
-      title: "", description: "", dueDate: "", dueDateDeviation: 0, type: ToDoType.single, recurringDays: 0
+      title: "", description: "", dueDate: "", dueDateDeviation: 0, type: false, recurringDays: 0
     })
   }
 
@@ -141,19 +140,36 @@ export default class AddToDoModal extends Component<AddToDoProps, AddToDoState>{
                     </input>
                   </div>
                 </div>
-
+                {/* <div class="custom-control custom-switch">
+                  <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                    <label class="custom-control-label" for="customSwitch1">Toggle this switch element</label>
+                </div> */}
+                <div className="custom-control custom-switch">
+                  <input
+                    id="type" name="type" type="checkbox"
+                    checked={this.state.type}
+                    onChange={this.changeTypeHandler}
+                    className="custom-control-input"
+                  ></input>
+                  <label className="custom-control-label" htmlFor="type"></label>
+                </div>                
+{/* 
                 <div className="form-group row">
                   <label htmlFor="type" className="col-3 col-form-label">Type</label>
                   <div className="col-3">
-                    <input
-                      id="type" name="type" value={this.state.type}
-                      onChange={this.changeTypeHandler}
-                      className="form-control form-control-sm"
-                    >
-                    </input>
-                  </div>
+                    <div className="custom-control custom-switch">
 
-                  <label htmlFor="recurringDays" className="col-3 col-form-label">Days</label>
+                      <input
+                        id="type" name="type" type="checkbox"
+                        checked={this.state.type}
+                        onChange={this.changeTypeHandler}
+                        className="form-control form-control-sm"
+                      ></input>
+
+                    </div>
+                  </div> */}
+
+                  {/* <label htmlFor="recurringDays" className="col-3 col-form-label">Days</label>
                   <div className="col-3">
                     <input
                       id="recurringDays" name="recurringDays" value={this.state.recurringDays}
@@ -161,8 +177,8 @@ export default class AddToDoModal extends Component<AddToDoProps, AddToDoState>{
                       className="form-control form-control-sm"
                     >
                     </input>
-                  </div>
-                </div>
+                  </div> */}
+                {/* </div> */}
               </form>
             </div>
             <div className="modal-footer">
