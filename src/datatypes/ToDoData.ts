@@ -1,5 +1,6 @@
 export interface ToDoData{
   uid: string,
+  displayId: number,
   name: string,
   type: ToDoType,
   duedate: string,

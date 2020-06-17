@@ -14,10 +14,10 @@ export default class ToDo extends Component<ToDoProps> {
 
     return(
       <tr className="d-flex">
-        <td className="col-1">{todoData.uid}    </td>
-        <td className="col-5">{todoData.name}   </td>
-        <td className="col-2">{todoData.duedate}</td>
-        <td className="col-2">{todoData.type}   </td>
+        <td className="col-1">{todoData.displayId} </td>
+        <td className="col-5">{todoData.name}      </td>
+        <td className="col-2">{todoData.duedate}   </td>
+        <td className="col-2">{todoData.type}      </td>
         <td className="col-2 d-flex justify-content-between p-0">
           <button className="m-0 px-2 py-0 btn btn-link">
             <CheckCircle />

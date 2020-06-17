@@ -41,7 +41,8 @@ export default class AddToDoModal extends Component<AddToDoProps, AddToDoState>{
     let todo: ToDoData = {
       name: this.state.title,
       type: this.state.type,
-      uid: this.props.nextId.toString(),
+      uid: uuid(),
+      displayId: this.props.nextId,
       duedate: this.state.dueDate,
       duedateDeviation: 3
     }
