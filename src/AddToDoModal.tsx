@@ -33,7 +33,7 @@ export default class AddToDoModal extends Component<AddToDoProps, AddToDoState>{
     })
   }
 
-  changeDescriptionHandler(evt: React.ChangeEvent<HTMLInputElement>) {
+  changeDescriptionHandler(evt: React.ChangeEvent<HTMLTextAreaElement>) {
     this.setState({
       description: evt.target.value
     })
@@ -94,7 +94,7 @@ export default class AddToDoModal extends Component<AddToDoProps, AddToDoState>{
               </button>
             </div>
             <div className="modal-body">
-              <form className="mx-4 mt-3">
+              <form className="mx-3 mt-3">
 
                 <div className="form-group row">
                   <label htmlFor="title" className="col-3 col-form-label">Title</label>
@@ -102,7 +102,7 @@ export default class AddToDoModal extends Component<AddToDoProps, AddToDoState>{
                     <input
                       id="title" name="title" value={this.state.title}
                       onChange={this.changeTitleHandler}
-                      className="form-control"
+                      className="form-control form-control-sm"
                     >
                     </input>
                   </div>
@@ -111,58 +111,54 @@ export default class AddToDoModal extends Component<AddToDoProps, AddToDoState>{
                 <div className="form-group row">
                   <label htmlFor="description" className="col-3 col-form-label">Description</label>
                   <div className="col-9">
-                    <input
+                    <textarea
                       id="description" name="description" value={this.state.description}
                       onChange={this.changeDescriptionHandler}
-                      className="form-control"
+                      className="form-control form-control-sm"
                     >
-                    </input>
+                    </textarea>
                   </div>
                 </div>
 
                 <div className="form-group row">
                   <label htmlFor="dueDate" className="col-3 col-form-label">Due date</label>
-                  <div className="col-9">
+                  <div className="col-3">
                     <input
                       id="dueDate" name="dueDate" value={this.state.dueDate}
                       onChange={this.changeDueDateHandler}
-                      className="form-control"
+                      className="form-control form-control-sm"
                     >
                     </input>
                   </div>
-                </div>
 
-                <div className="form-group row">
-                  <label htmlFor="dueDateDeviation" className="col-3 col-form-label">Due Date Deviation</label>
-                  <div className="col-9">
+                  <label htmlFor="dueDateDeviation" className="col-3 col-form-label">Deviation</label>
+                  <div className="col-3">
                     <input
                       id="dueDateDeviation" name="dueDateDeviation" value={this.state.dueDateDeviation}
                       onChange={this.changeDueDateDeviationHandler}
-                      className="form-control"
+                      className="form-control form-control-sm"
                     >
                     </input>
                   </div>
                 </div>
 
                 <div className="form-group row">
-                  <label htmlFor="type" className="col-2 col-form-label">Type</label>
-                  <div>
+                  <label htmlFor="type" className="col-3 col-form-label">Type</label>
+                  <div className="col-3">
                     <input
                       id="type" name="type" value={this.state.type}
                       onChange={this.changeTypeHandler}
-                      className="form-control"
+                      className="form-control form-control-sm"
                     >
                     </input>
                   </div>
-                </div>
 
-                <div className="form-group row">
-                  <label htmlFor="recurringDays" className="col-3 col-form-label">How many days</label>
-                  <div className="col-9">
+                  <label htmlFor="recurringDays" className="col-3 col-form-label">Days</label>
+                  <div className="col-3">
                     <input
                       id="recurringDays" name="recurringDays" value={this.state.recurringDays}
                       onChange={this.changeRecurringDaysHandler}
-                      className="form-control"
+                      className="form-control form-control-sm"
                     >
                     </input>
                   </div>
