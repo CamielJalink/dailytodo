@@ -47,6 +47,9 @@ export default class AddToDoModal extends Component<AddToDoProps, AddToDoState>{
       duedateDeviation: 3
     }
     this.props.addToDo(todo);
+    this.setState({
+      title: "", dueDate: "", type: ToDoType.single
+    })
   }
 
   render(){
@@ -91,7 +94,7 @@ export default class AddToDoModal extends Component<AddToDoProps, AddToDoState>{
             </div>
             <div className="modal-footer">
               <button type="button" className="btn btn-danger" data-dismiss="modal">Close</button>
-              <button type="button" className="btn btn-primary" onClick={this.addToDo}>Add</button>
+              <button type="button" className="btn btn-primary" onClick={this.addToDo} data-dismiss="modal">Add</button>
             </div>
           </div>
         </div>
