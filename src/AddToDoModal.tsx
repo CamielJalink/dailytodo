@@ -58,40 +58,45 @@ export default class AddToDoModal extends Component<AddToDoProps, AddToDoState>{
         <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content">
             <div className="modal-header">
-              <h2 className="modal-title">Add todo</h2>
+              <h2 className="modal-title">What needs doing?</h2>
               <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div className="modal-body">
-              <h3 className="ml-5 mt-3 mb-4">What needs doing?</h3>
-              <form className="mx-5">
-                <div className="form-group">
-                  <label htmlFor="title">Title</label>
-                  <input
-                    id="title" name="title" value={this.state.title}
-                    onChange={this.changeTitleHandler}
-                    className="form-control"
-                  >
-                  </input>
+              <form className="mx-4 mt-3">
+                <div className="form-group row">
+                  <label htmlFor="title" className="col-3 col-form-label">Title</label>
+                  <div className="col-9">
+                    <input
+                      id="title" name="title" value={this.state.title}
+                      onChange={this.changeTitleHandler}
+                      className="form-control"
+                    >
+                    </input>
+                  </div>
                 </div>
-                <div className="form-group">
-                  <label htmlFor="dueDate">Due date</label>
-                  <input
-                    id="dueDate" name="dueDate" value={this.state.dueDate}
-                    onChange={this.changeDueDateHandler}
-                    className="form-control"
-                  >
-                  </input>
+                <div className="form-group row">
+                  <label htmlFor="dueDate" className="col-3 col-form-label">Due date</label>
+                  <div className="col-9">
+                    <input
+                      id="dueDate" name="dueDate" value={this.state.dueDate}
+                      onChange={this.changeDueDateHandler}
+                      className="form-control"
+                    >
+                    </input>
+                  </div>
                 </div>
-                <div className="form-group">
-                  <label htmlFor="type">Type</label>
-                  <input
-                    id="type" name="type" value={this.state.type}
-                    onChange={this.changeTypeHandler}
-                    className="form-control"
-                  > 
-                  </input>
+                <div className="form-group row">
+                  <label htmlFor="type" className="col-2 col-form-label">Type</label>
+                  <div>
+                    <input
+                      id="type" name="type" value={this.state.type}
+                      onChange={this.changeTypeHandler}
+                      className="form-control"
+                    >
+                    </input>
+                  </div>
                 </div>
               </form>
             </div>
