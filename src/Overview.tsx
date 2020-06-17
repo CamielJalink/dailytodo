@@ -19,6 +19,13 @@ export default class Overview extends Component<OverviewProps, OverviewState> {
   constructor(props: OverviewProps){
     super(props);
     this.state = { todoData: dummyData };
+    this.addToDo = this.addToDo.bind(this);
+  }
+
+  addToDo(ToDo: ToDoData){
+    this.setState(state => ({ 
+      todoData: [...state.todoData, ToDo]
+    }))
   }
 
   render(){
@@ -49,7 +56,7 @@ export default class Overview extends Component<OverviewProps, OverviewState> {
           </tbody>
         </table>
         
-        <AddToDoModal/>
+        <AddToDoModal addToDo={(todo: ToDoData) => this.addToDo(todo)} />
       </div>
     )
   }
