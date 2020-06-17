@@ -56,7 +56,10 @@ export default class Overview extends Component<OverviewProps, OverviewState> {
           </tbody>
         </table>
         
-        <AddToDoModal addToDo={(todo: ToDoData) => this.addToDo(todo)} />
+        <AddToDoModal 
+          addToDo={(todo: ToDoData) => this.addToDo(todo)} 
+          nextId={this.state.todoData.length + 1}
+        />
       </div>
     )
   }

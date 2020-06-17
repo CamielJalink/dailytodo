@@ -3,7 +3,7 @@ import { v4 as uuid } from 'uuid';
 import "./AddToDoModal.scss";
 import { ToDoData, ToDoType } from "./datatypes/ToDoData";
 
-interface AddToDoProps{ addToDo: Function };
+interface AddToDoProps{ addToDo: Function, nextId: number };
 interface AddToDoState{ title: string, dueDate: string, type: ToDoType};
 
 export default class AddToDoModal extends Component<AddToDoProps, AddToDoState>{
@@ -41,7 +41,7 @@ export default class AddToDoModal extends Component<AddToDoProps, AddToDoState>{
     let todo: ToDoData = {
       name: this.state.title,
       type: this.state.type,
-      uid: uuid(),
+      uid: this.props.nextId.toString(),
       duedate: this.state.dueDate,
       duedateDeviation: 3
     }
