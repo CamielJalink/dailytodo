@@ -4,16 +4,26 @@ import "./AddToDoModal.scss";
 import { ToDoData, ToDoType } from "./datatypes/ToDoData";
 
 interface AddToDoProps{ addToDo: Function, nextId: number };
-interface AddToDoState{ title: string, dueDate: string, type: ToDoType};
+interface AddToDoState{ 
+  title: string,
+  description: string,
+  dueDate: string,
+  dueDateDeviation: number,
+  type: ToDoType,
+  recurringDays: number,
+};
 
 export default class AddToDoModal extends Component<AddToDoProps, AddToDoState>{
 
   constructor(props: AddToDoProps){
     super(props);
-    this.state = { title: "", dueDate: "", type: ToDoType.single }
+    this.state = { title: "", description: "", dueDate: "", dueDateDeviation: 0, type: ToDoType.single, recurringDays: 0 }
     this.changeTitleHandler = this.changeTitleHandler.bind(this);
+    this.changeDescriptionHandler = this.changeDescriptionHandler.bind(this);
     this.changeDueDateHandler = this.changeDueDateHandler.bind(this);
+    this.changeDueDateDeviationHandler = this.changeDueDateDeviationHandler.bind(this);
     this.changeTypeHandler = this.changeTypeHandler.bind(this);
+    this.changeRecurringDaysHandler = this.changeRecurringDaysHandler.bind(this);
     this.addToDo = this.addToDo.bind(this);
   }
 
@@ -23,9 +33,21 @@ export default class AddToDoModal extends Component<AddToDoProps, AddToDoState>{
     })
   }
 
+  changeDescriptionHandler(evt: React.ChangeEvent<HTMLInputElement>) {
+    this.setState({
+      description: evt.target.value
+    })
+  }
+
   changeDueDateHandler(evt: React.ChangeEvent<HTMLInputElement>) {
     this.setState({
       dueDate: evt.target.value
+    })
+  }
+
+  changeDueDateDeviationHandler(evt: React.ChangeEvent<HTMLInputElement>) {
+    this.setState({
+      dueDateDeviation: Number(evt.target.value)
     })
   }
 
@@ -37,10 +59,18 @@ export default class AddToDoModal extends Component<AddToDoProps, AddToDoState>{
     })
   }
 
+  changeRecurringDaysHandler(evt: React.ChangeEvent<HTMLInputElement>) {
+    this.setState({
+      recurringDays: Number(evt.target.value)
+    })
+  }
+
   addToDo(){
     let todo: ToDoData = {
       name: this.state.title,
+      description: this.state.description,
       type: this.state.type,
+      recurringDays: this.state.recurringDays,
       uid: uuid(),
       displayId: this.props.nextId,
       duedate: this.state.dueDate,
@@ -48,7 +78,7 @@ export default class AddToDoModal extends Component<AddToDoProps, AddToDoState>{
     }
     this.props.addToDo(todo);
     this.setState({
-      title: "", dueDate: "", type: ToDoType.single
+      title: "", description: "", dueDate: "", dueDateDeviation: 0, type: ToDoType.single, recurringDays: 0
     })
   }
 
@@ -58,13 +88,14 @@ export default class AddToDoModal extends Component<AddToDoProps, AddToDoState>{
         <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content">
             <div className="modal-header">
-              <h2 className="modal-title">What needs doing?</h2>
+              <h2 className="modal-title font-weight-bold">What needs doing?</h2>
               <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div className="modal-body">
               <form className="mx-4 mt-3">
+
                 <div className="form-group row">
                   <label htmlFor="title" className="col-3 col-form-label">Title</label>
                   <div className="col-9">
@@ -76,6 +107,19 @@ export default class AddToDoModal extends Component<AddToDoProps, AddToDoState>{
                     </input>
                   </div>
                 </div>
+
+                <div className="form-group row">
+                  <label htmlFor="description" className="col-3 col-form-label">Description</label>
+                  <div className="col-9">
+                    <input
+                      id="description" name="description" value={this.state.description}
+                      onChange={this.changeDescriptionHandler}
+                      className="form-control"
+                    >
+                    </input>
+                  </div>
+                </div>
+
                 <div className="form-group row">
                   <label htmlFor="dueDate" className="col-3 col-form-label">Due date</label>
                   <div className="col-9">
@@ -87,12 +131,37 @@ export default class AddToDoModal extends Component<AddToDoProps, AddToDoState>{
                     </input>
                   </div>
                 </div>
+
+                <div className="form-group row">
+                  <label htmlFor="dueDateDeviation" className="col-3 col-form-label">Due Date Deviation</label>
+                  <div className="col-9">
+                    <input
+                      id="dueDateDeviation" name="dueDateDeviation" value={this.state.dueDateDeviation}
+                      onChange={this.changeDueDateDeviationHandler}
+                      className="form-control"
+                    >
+                    </input>
+                  </div>
+                </div>
+
                 <div className="form-group row">
                   <label htmlFor="type" className="col-2 col-form-label">Type</label>
                   <div>
                     <input
                       id="type" name="type" value={this.state.type}
                       onChange={this.changeTypeHandler}
+                      className="form-control"
+                    >
+                    </input>
+                  </div>
+                </div>
+
+                <div className="form-group row">
+                  <label htmlFor="recurringDays" className="col-3 col-form-label">How many days</label>
+                  <div className="col-9">
+                    <input
+                      id="recurringDays" name="recurringDays" value={this.state.recurringDays}
+                      onChange={this.changeRecurringDaysHandler}
                       className="form-control"
                     >
                     </input>
