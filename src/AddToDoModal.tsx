@@ -58,38 +58,41 @@ export default class AddToDoModal extends Component<AddToDoProps, AddToDoState>{
         <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content">
             <div className="modal-header">
-              <h3 className="modal-title">Add todo</h3>
+              <h2 className="modal-title">Add todo</h2>
               <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div className="modal-body">
-              <h5>What needs to be done?</h5>
-              <form>
-                <label htmlFor="title">Title</label>
-                <input
-                  id="title"
-                  name="title"
-                  value={this.state.title}
-                  onChange={this.changeTitleHandler}
-                >
-                </input>
-                <label htmlFor="dueDate">Due date</label>
-                <input
-                  id="dueDate"
-                  name="dueDate"
-                  value={this.state.dueDate}
-                  onChange={this.changeDueDateHandler}
-                >
-                </input>
-                <label htmlFor="type">Type</label>
-                <input
-                  id="type"
-                  name="type"
-                  value={this.state.type}
-                  onChange={this.changeTypeHandler}
-                >
-                </input>
+              <h3 className="ml-5 mt-3 mb-4">What needs doing?</h3>
+              <form className="mx-5">
+                <div className="form-group">
+                  <label htmlFor="title">Title</label>
+                  <input
+                    id="title" name="title" value={this.state.title}
+                    onChange={this.changeTitleHandler}
+                    className="form-control"
+                  >
+                  </input>
+                </div>
+                <div className="form-group">
+                  <label htmlFor="dueDate">Due date</label>
+                  <input
+                    id="dueDate" name="dueDate" value={this.state.dueDate}
+                    onChange={this.changeDueDateHandler}
+                    className="form-control"
+                  >
+                  </input>
+                </div>
+                <div className="form-group">
+                  <label htmlFor="type">Type</label>
+                  <input
+                    id="type" name="type" value={this.state.type}
+                    onChange={this.changeTypeHandler}
+                    className="form-control"
+                  > 
+                  </input>
+                </div>
               </form>
             </div>
             <div className="modal-footer">
