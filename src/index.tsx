@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'bootstrap/dist/js/bootstrap.bundle.min'; // This requires Jquery, and then needs a webpack addon to find it.
+import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // This requires Jquery, and then needs a webpack addon to find it.
 import './fonts/Caveat-Regular.ttf';
 import './fonts/Caveat-Bold.ttf';
 import './index.scss';

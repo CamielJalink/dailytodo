@@ -140,36 +140,24 @@ export default class AddToDoModal extends Component<AddToDoProps, AddToDoState>{
                     </input>
                   </div>
                 </div>
-                {/* <div class="custom-control custom-switch">
-                  <input type="checkbox" class="custom-control-input" id="customSwitch1">
-                    <label class="custom-control-label" for="customSwitch1">Toggle this switch element</label>
-                </div> */}
-                <div className="custom-control custom-switch">
-                  <input
-                    id="type" name="type" type="checkbox"
-                    checked={this.state.type}
-                    onChange={this.changeTypeHandler}
-                    className="custom-control-input"
-                  ></input>
-                  <label className="custom-control-label" htmlFor="type"></label>
-                </div>                
-{/* 
-                <div className="form-group row">
-                  <label htmlFor="type" className="col-3 col-form-label">Type</label>
-                  <div className="col-3">
-                    <div className="custom-control custom-switch">
 
+                <div className="row align-items-center">
+                  <div className="col-3">
+                    <label className="mb-1">Recurring?</label>
+                  </div>
+                  <div className="col-3 align-items-center">
+                    <div className="custom-control custom-switch">
                       <input
                         id="type" name="type" type="checkbox"
                         checked={this.state.type}
                         onChange={this.changeTypeHandler}
-                        className="form-control form-control-sm"
+                        className="custom-control-input"
                       ></input>
-
+                      <label className="custom-control-label" htmlFor="type"></label>
                     </div>
-                  </div> */}
+                  </div>
 
-                  {/* <label htmlFor="recurringDays" className="col-3 col-form-label">Days</label>
+                  <label htmlFor="recurringDays" className="col-3 col-form-label">Days</label>
                   <div className="col-3">
                     <input
                       id="recurringDays" name="recurringDays" value={this.state.recurringDays}
@@ -177,8 +165,8 @@ export default class AddToDoModal extends Component<AddToDoProps, AddToDoState>{
                       className="form-control form-control-sm"
                     >
                     </input>
-                  </div> */}
-                {/* </div> */}
+                  </div>
+                </div>
               </form>
             </div>
             <div className="modal-footer">
