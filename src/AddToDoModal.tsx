@@ -86,16 +86,16 @@ export default class AddToDoModal extends Component<AddToDoProps, AddToDoState>{
       <div className="modal addToDoModal" id="todoModal" role="dialog">
         <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content">
-            <div className="modal-header">
-              <h2 className="modal-title font-weight-bold">What needs doing?</h2>
-              <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+            <div className="modal-header d-flex align-items-center">
+              <h2 className="modal-title font-weight-bold ml-3">What needs doing?</h2>
+              <button type="button" className="close mr-1" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div className="modal-body">
               <form className="mx-3 mt-3">
 
-                <div className="form-group row">
+                <div className="form-group row my-4">
                   <label htmlFor="title" className="col-3 col-form-label">Title</label>
                   <div className="col-9">
                     <input
@@ -107,19 +107,19 @@ export default class AddToDoModal extends Component<AddToDoProps, AddToDoState>{
                   </div>
                 </div>
 
-                <div className="form-group row">
+                <div className="form-group row mb-4">
                   <label htmlFor="description" className="col-3 col-form-label">Description</label>
                   <div className="col-9">
                     <textarea
                       id="description" name="description" value={this.state.description}
                       onChange={this.changeDescriptionHandler}
-                      className="form-control form-control-sm"
+                      className="form-control form-control-sm mb-2"
                     >
                     </textarea>
                   </div>
                 </div>
 
-                <div className="form-group row">
+                <div className="form-group row mb-4">
                   <label htmlFor="dueDate" className="col-3 col-form-label">Due date</label>
                   <div className="col-3">
                     <input
@@ -141,7 +141,7 @@ export default class AddToDoModal extends Component<AddToDoProps, AddToDoState>{
                   </div>
                 </div>
 
-                <div className="row align-items-center">
+                <div className="row align-items-center mb-3">
                   <div className="col-3">
                     <label className="mb-1">Recurring?</label>
                   </div>
@@ -169,9 +169,9 @@ export default class AddToDoModal extends Component<AddToDoProps, AddToDoState>{
                 </div>
               </form>
             </div>
-            <div className="modal-footer">
+            <div className="modal-footer py-4">
               <button type="button" className="btn btn-danger" data-dismiss="modal">Close</button>
-              <button type="button" className="btn btn-primary" onClick={this.addToDo} data-dismiss="modal">Add</button>
+              <button type="button" className="btn btn-primary ml-3" onClick={this.addToDo} data-dismiss="modal">Add</button>
             </div>
           </div>
         </div>
