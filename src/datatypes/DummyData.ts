@@ -1,5 +1,11 @@
 import { ToDoData, ToDoType } from "./ToDoData"
 
+let date1 = new Date();
+let date2 = new Date();
+let date3 = new Date();
+
+console.log(date1);
+
 export let dummyData: ToDoData[] = [
   {
     uid: "1",
@@ -8,7 +14,7 @@ export let dummyData: ToDoData[] = [
     description: "",
     type: ToDoType.single,
     recurringDays: 0,
-    duedate: "test",
+    duedate: date1,
     duedateDeviation: 0
   },
   {
@@ -18,7 +24,7 @@ export let dummyData: ToDoData[] = [
     description: "",
     type: ToDoType.recurring,
     recurringDays: 3,
-    duedate: "test2",
+    duedate: date2,
     duedateDeviation: 5
   },
   {
@@ -28,7 +34,7 @@ export let dummyData: ToDoData[] = [
     description: "",
     type: ToDoType.single,
     recurringDays: 0,
-    duedate: "test3",
+    duedate: date3,
     duedateDeviation: 0
   }
 ]

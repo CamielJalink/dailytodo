@@ -5,7 +5,7 @@ export interface ToDoData{
   description: string,
   type: ToDoType,
   recurringDays: number,
-  duedate: string,
+  duedate: Date,
   duedateDeviation: number,
 }
 

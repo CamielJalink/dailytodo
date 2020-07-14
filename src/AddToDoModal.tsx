@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import DatePicker from "react-datepicker";
 import { v4 as uuid } from 'uuid';
 import "./AddToDoModal.scss";
 import { ToDoData, ToDoType } from "./datatypes/ToDoData";
@@ -7,7 +8,7 @@ interface AddToDoProps{ addToDo: Function, nextId: number };
 interface AddToDoState{ 
   title: string,
   description: string,
-  dueDate: string,
+  dueDate: Date,
   dueDateDeviation: number,
   // type: ToDoType,
   type: boolean,
@@ -18,7 +19,7 @@ export default class AddToDoModal extends Component<AddToDoProps, AddToDoState>{
 
   constructor(props: AddToDoProps){
     super(props);
-    this.state = { title: "", description: "", dueDate: "", dueDateDeviation: 0, type: false, recurringDays: 0 }
+    this.state = { title: "", description: "", dueDate: new Date(), dueDateDeviation: 0, type: false, recurringDays: 0 }
     this.changeTitleHandler = this.changeTitleHandler.bind(this);
     this.changeDescriptionHandler = this.changeDescriptionHandler.bind(this);
     this.changeDueDateHandler = this.changeDueDateHandler.bind(this);
@@ -40,9 +41,9 @@ export default class AddToDoModal extends Component<AddToDoProps, AddToDoState>{
     })
   }
 
-  changeDueDateHandler(evt: React.ChangeEvent<HTMLInputElement>) {
+  changeDueDateHandler(date: Date) {
     this.setState({
-      dueDate: evt.target.value
+      dueDate: date
     })
   }
 
@@ -77,7 +78,7 @@ export default class AddToDoModal extends Component<AddToDoProps, AddToDoState>{
     }
     this.props.addToDo(todo);
     this.setState({
-      title: "", description: "", dueDate: "", dueDateDeviation: 0, type: false, recurringDays: 0
+      title: "", description: "", dueDate: new Date(), dueDateDeviation: 0, type: false, recurringDays: 0
     })
   }
 
@@ -122,12 +123,16 @@ export default class AddToDoModal extends Component<AddToDoProps, AddToDoState>{
                 <div className="form-group row mb-4">
                   <label htmlFor="dueDate" className="col-3 col-form-label">Due date</label>
                   <div className="col-3">
-                    <input
+                    <DatePicker
+                      selected={this.state.dueDate}
+                      onChange={this.changeDueDateHandler}
+                    />
+                      {/* <input
                       id="dueDate" name="dueDate" value={this.state.dueDate}
                       onChange={this.changeDueDateHandler}
                       className="form-control form-control-sm"
                     >
-                    </input>
+                    </input> */}
                   </div>
 
                   <label htmlFor="dueDateDeviation" className="col-3 col-form-label">Deviation</label>
