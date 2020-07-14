@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import DatePicker from "react-datepicker";
+import moment, { Moment } from 'moment';
 import { v4 as uuid } from 'uuid';
 import "./AddToDoModal.scss";
 import { ToDoData, ToDoType } from "./datatypes/ToDoData";
@@ -73,7 +74,7 @@ export default class AddToDoModal extends Component<AddToDoProps, AddToDoState>{
       recurringDays: this.state.recurringDays,
       uid: uuid(),
       displayId: this.props.nextId,
-      duedate: this.state.dueDate,
+      duedate: moment(this.state.dueDate),
       duedateDeviation: 3
     }
     this.props.addToDo(todo);

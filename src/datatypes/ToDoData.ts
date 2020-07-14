@@ -1,3 +1,6 @@
+import { Moment } from "moment";
+
+
 export interface ToDoData{
   uid: string,
   displayId: number,
@@ -5,7 +8,7 @@ export interface ToDoData{
   description: string,
   type: ToDoType,
   recurringDays: number,
-  duedate: Date,
+  duedate: Moment,
   duedateDeviation: number,
 }
 

@@ -1,10 +1,5 @@
 import { ToDoData, ToDoType } from "./ToDoData"
-
-let date1 = new Date();
-let date2 = new Date();
-let date3 = new Date();
-
-console.log(date1);
+import moment from "moment";
 
 export let dummyData: ToDoData[] = [
   {
@@ -14,7 +9,7 @@ export let dummyData: ToDoData[] = [
     description: "",
     type: ToDoType.single,
     recurringDays: 0,
-    duedate: date1,
+    duedate: moment("2020-12-25"),
     duedateDeviation: 0
   },
   {
@@ -24,7 +19,7 @@ export let dummyData: ToDoData[] = [
     description: "",
     type: ToDoType.recurring,
     recurringDays: 3,
-    duedate: date2,
+    duedate: moment("2020-08-22"),
     duedateDeviation: 5
   },
   {
@@ -34,7 +29,7 @@ export let dummyData: ToDoData[] = [
     description: "",
     type: ToDoType.single,
     recurringDays: 0,
-    duedate: date3,
+    duedate: moment(),
     duedateDeviation: 0
   }
 ]
