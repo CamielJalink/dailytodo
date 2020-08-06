@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import DatePicker from "react-datepicker";
-import moment, { Moment } from 'moment';
+import moment from 'moment';
 import { v4 as uuid } from 'uuid';
 import "./AddToDoModal.scss";
 import { ToDoData, ToDoType } from "./datatypes/ToDoData";
@@ -121,29 +121,29 @@ export default class AddToDoModal extends Component<AddToDoProps, AddToDoState>{
                   </div>
                 </div>
 
-                <div className="form-group row mb-4">
+                <div className="form-group row mb-1">
                   <label htmlFor="dueDate" className="col-3 col-form-label">Due date</label>
-                  <div className="col-3">
+                  <div className="col-4">
                     <DatePicker
                       selected={this.state.dueDate}
                       onChange={this.changeDueDateHandler}
-                    />
-                      {/* <input
-                      id="dueDate" name="dueDate" value={this.state.dueDate}
-                      onChange={this.changeDueDateHandler}
                       className="form-control form-control-sm"
-                    >
-                    </input> */}
+                    />
                   </div>
+                </div>
 
+                <div className="form-group row mb-4 align-items-center">
                   <label htmlFor="dueDateDeviation" className="col-3 col-form-label">Deviation</label>
                   <div className="col-3">
-                    <input
-                      id="dueDateDeviation" name="dueDateDeviation" value={this.state.dueDateDeviation}
-                      onChange={this.changeDueDateDeviationHandler}
-                      className="form-control form-control-sm"
-                    >
-                    </input>
+                    <div className="d-flex justify-content-start align-items-center">
+                      <input
+                        id="dueDateDeviation" name="dueDateDeviation" value={this.state.dueDateDeviation}
+                        onChange={this.changeDueDateDeviationHandler}
+                        className="form-control form-control-sm text-center pl-0"
+                      >
+                      </input>
+                      <span className="ml-2">days</span>
+                    </div>
                   </div>
                 </div>
 
