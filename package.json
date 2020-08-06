@@ -1,0 +1,19 @@
+{
+  "name": "dailytodo",
+  "version": "1.0.0",
+  "description": "This application was created both as a way to hone and show off my skills, as well as to fill a craving.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CamielJalink/dailytodo.git"
+  },
+  "author": "Camiel Jalink",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CamielJalink/dailytodo/issues"
+  },
+  "homepage": "https://github.com/CamielJalink/dailytodo#readme"
+}
