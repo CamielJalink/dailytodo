@@ -8,6 +8,6 @@ app.get('/', (req, res) => {
   res.sendFile(path.join('../clientside/build', 'index.html'));
 });
 
-app.listen(9000, () => {
+app.listen(Number(process.env.PORT) || 9000, process.env.IP || '', () => {
   console.log("Server is running");
 });
