@@ -4,7 +4,7 @@
   "description": "This application was created both as a way to hone and show off my skills, as well as to fill a craving.",
   "main": "index.js",
   "scripts": {
-    "install": "cd clientside && npm install && npm run build && cd .. && cd serverside && npm install",
+    "install": "cd clientside && npm install && npm run build && cd .. && cd serverside && npm install && tsc",
     "start": "cd serverside && npm start"
   },
   "repository": {
