@@ -4,7 +4,7 @@
   "description": "This application was created both as a way to hone and show off my skills, as well as to fill a craving.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "cd clientside && npm install && npm run build && cd .. && cd serverside && npm install && npm start"
   },
   "repository": {
     "type": "git",
